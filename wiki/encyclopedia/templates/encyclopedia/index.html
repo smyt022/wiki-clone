@@ -1,0 +1,22 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>All Pages</h1>
+
+    <ul>
+        {% for entry in entries %}
+            <li>
+                <a href={% url 'encyclopedia:getEntry' entryTitle=entry %}>{{ entry }}</a>
+                <!--django subs in a url for a given app_name:pathName... 
+                my "getEntry" path happens to require an argument (to say which encyclopedia entry page we are getting)
+                i set "entryTitle" (parameter variable i named in urls.py and refrenced in views.py for the function)
+                to be equal to "entry" which is a django template variable i defined in the django for loop above-->
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
