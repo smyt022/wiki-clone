@@ -44,3 +44,8 @@ def entry_page(request, entryTitle):
                 })
         return render(request,"encyclopedia/entryPageNotFound.html") #if the encyclopedia entry was not found, there is a page for that to notify user
 
+
+
+
+def entry_creation_page(request):
+    return render(request,"encyclopedia/createNewEntry.html")

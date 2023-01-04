@@ -1,0 +1,29 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia Entry Not Found
+{% endblock %}
+
+{% block body %}
+<form>
+    <div>
+        <label for="entryTitle">Entry Title:</label>
+
+        <input type="text" name="entryTitle" placeholder="title">
+    </div>
+
+    <div>
+        <label for="markdownEntry">Entry below in markdown:</label>
+    </div>
+
+    <div>
+        <textarea id="markdownEntry" name="entry" rows="1" cols="10">
+            some sample text
+        </textarea>
+    </div>
+
+    <input type="submit" value="save">
+    
+</form>
+    
+{% endblock %}
