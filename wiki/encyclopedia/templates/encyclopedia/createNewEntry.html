@@ -5,21 +5,11 @@
 {% endblock %}
 
 {% block body %}
-<form>
+<form action="{% url 'encyclopedia:createMdFile' %}" method="post">
+    {% csrf_token %} <!--must be added whenever a form makes post requests (security reasons)-->
+    
     <div>
-        <label for="entryTitle">Entry Title:</label>
-
-        <input type="text" name="entryTitle" placeholder="title">
-    </div>
-
-    <div>
-        <label for="markdownEntry">Entry below in markdown:</label>
-    </div>
-
-    <div>
-        <textarea id="markdownEntry" name="entry" rows="1" cols="10">
-            some sample text
-        </textarea>
+        {{ form }} <!--adding .as_p will make sure the form isnt all on same line-->
     </div>
 
     <input type="submit" value="save">
