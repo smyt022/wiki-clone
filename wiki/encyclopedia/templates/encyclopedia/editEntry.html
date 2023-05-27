@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia Entry Not Found
+{% endblock %}
+
+{% block body %}
+<form action="{% url 'encyclopedia:editMdFile' %}" method="post">
+    {% csrf_token %} <!--must be added whenever a form makes post requests (security reasons)-->
+    
+    <div>
+        {{ form }} <!--adding .as_p will make sure the form isnt all on same line-->
+    </div>
+
+    <input type="submit" value="save">
+    
+</form>
+    
+{% endblock %}

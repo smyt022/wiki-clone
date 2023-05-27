@@ -1,0 +1,1 @@
+Canada is a country located in north america. It is the 2nd largest in the world by landmass and is found north of the United States of America
